@@ -1,4 +1,10 @@
-
+.bg-maroon {
+  background-color: rgba(138, 21, 56, 1);
+  color: white;
+}
+.text-maroon {
+  color: #800000; /* classic maroon */
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
