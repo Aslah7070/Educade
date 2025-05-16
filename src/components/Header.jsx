@@ -33,21 +33,20 @@ const Header = () => {
       </div>
     </div>
 
-    {/* Mid items visible on md+ */}
     <div className="d-none d-md-flex justify-content-evenly align-items-center p-0 col-5  order-3 order-md-2">
       {midItems.map((item, index) => (
         <p key={index} className={`p-0 m-0 text-center ${item.color}`}>
           {item.text}
         </p>
       ))}
-      {/* <BootstrapDropdown labels="Dropdown button" items={dropdownItems} /> */}
+
     </div>
-       {/* Small screen dropdown - full width */}
+    
     <div className="d-flex d-md-none justify-content-center align-items-center  col-1 col-md-5   order-4">
       <BootstrapDropdown labels="Menu" items={dropdownItems} />
     </div>
 
-    {/* Contact info and button */}
+    
     <div className=" col-7 col-md-4   d-flex justify-content-center align-items-center order-2 order-md-3">
       <div className="w-75 p-0 d-flex flex-column">
         <p style={{ fontSize: "0.8rem" }} className="m-0 text-center">
