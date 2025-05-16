@@ -70,6 +70,17 @@ export const Article = () => {
     setIndex(selectedIndex);
   };
 
+    const [animate, setAnimate] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAnimate(true);
+      setTimeout(() => setAnimate(false), 1000); 
+    }, 3000); 
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div
       className="container-fluid "
@@ -106,7 +117,7 @@ export const Article = () => {
       </div>
       <div className="row d-flex justify-content-center ">
         <div className="col-md-4">
-          <Image className="" src={left} width={500} height={500} alt="" />
+          <Image   className={`animate__animated ${animate ? 'animate__bounce' : ''}`} src={left} width={500} height={500} alt="" />
         </div>
         <div className="col-md-4  d-flex flex-column justify-content-evenly align-items-center ">
           <button type="button" className=" rounded-3  bg-maroon w-50 me-5">
@@ -135,7 +146,7 @@ export const Article = () => {
           </Carousel>
         </div>
         <div className="col-md-4 ">
-          <Image className="" src={right} width={500} height={500} alt="" />
+          <Image  className={`animate__animated ${animate ? 'animate__bounce' : ''}`} src={right} width={500} height={500} alt="" />
         </div>
       </div>
 
@@ -167,149 +178,3 @@ export const Article = () => {
   );
 };
 
-
-// "use client";
-
-// import React from "react";
-// import { Carousel, Row, Col, Container } from "react-bootstrap";
-// import "bootstrap/dist/css/bootstrap.min.css";
-// import paint from "../assets/paint.png"
-// import Story from "../assets/Story.png"
-// import teach from "../assets/ABC.png"
-// import Image from "next/image";
-// const testimonials = [
-//   {
-//     name: "English Grammar",
-//     text: "Master the building blocks of writing and communication.",
-//     photo:paint,
-//   },
-//   {
-//     name: "Craft Classes",
-//     text: "Unleash creativity with hands-on projects and artistic fun.",
-//     photo: Story,
-//   },
-//   {
-//     name: "Art and Painting",
-//     text: "Express yourself through colors, sketches, and designs",
-//     photo:teach,
-//   },
-//   {
-//     name: "John Doe",
-//     text: "Fantastic product with amazing support.",
-//     photo: paint
-//   },
-//   {
-//     name: "Emma Watson",
-//     text: "My team loves this, highly recommended.",
-//     photo:teach
-//   },
-//   {
-//     name: "Emma Watson",
-//     text: "My team loves this, highly recommended.",
-//     photo:Story
-//   },
-// ];
-
-// function chunkArray(arr, chunkSize) {
-//   const results = [];
-//   for (let i = 0; i < arr.length; i += chunkSize) {
-//     results.push(arr.slice(i, i + chunkSize));
-//   }
-//   return results;
-// }
-
-// const TestimonialSlider = () => {
-//   const chunks = chunkArray(testimonials, 3);
-
-//   return (
-//     <Container style={{ marginTop: "40px",  }}>
-//       <Carousel interval={3000} pause={false} indicators controls>
-//         {chunks.map((group, idx) => (
-//           <Carousel.Item key={idx}>
-//             <Row className="d-flex w-100  justify-content-center align-items-center " style={{ gap: "20px" }}>
-//               {group.map((t, index) => (
-//                 <Col key={index} md={4} className="d-flex bg-custom-peach w-25 rounded-3    align-items-center p-3">
-//                  <div>
-//                      <h6 className="text-maroon " style={{ fontWeight: "bold", marginTop: "10px" }}>{t.name}</h6>
-//                   <p className="text-maroon "  style={{ fontStyle: "italic", textAlign: "start " }}>{t.text}</p>
-//                  </div>
-//                 <div
-//   style={{
-//     width: "200px",
-//     height: "100px",
-//     borderRadius: "50%",
-//     overflow: "hidden",
-//     marginBottom: "10px",
-//     border: "3px solid #0d6efd",
-//   }}
-// >
-//   <Image
-//     src={t.photo}
-//     alt={t.name}
-//     width={200}
-//     height={100}
-//     style={{ objectFit: "cover" }}
-//   />
-// </div>
-//                 </Col>
-//               ))}
-//             </Row>
-//           </Carousel.Item>
-//         ))}
-//       </Carousel>
-//     </Container>
-//   );
-// };
-
-// export default TestimonialSlider;
-
-
-// // import React from 'react';
-// // import { Carousel, Container } from 'react-bootstrap';
-
-// // const testimonials = [
-// //   {
-// //     name: "Alice Johnson",
-// //     position: "CEO, Company A",
-// //     photo: "https://randomuser.me/api/portraits/women/44.jpg",
-// //     text: "This product changed our workflow for the better. Highly recommend!",
-// //   },
-// //   {
-// //     name: "Mark Smith",
-// //     position: "Developer, Tech Corp",
-// //     photo: "https://randomuser.me/api/portraits/men/36.jpg",
-// //     text: "Excellent customer service and the product is easy to use.",
-// //   },
-// //   {
-// //     name: "Jessica Lee",
-// //     position: "Designer, Creative Studio",
-// //     photo: "https://randomuser.me/api/portraits/women/65.jpg",
-// //     text: "A beautiful and functional solution that boosted our sales.",
-// //   },
-// // ];
-
-// // const TestimonialCarousel = () => {
-// //   return (
-// //     <Container style={{ maxWidth: '600px', marginTop: '40px' }}>
-// //       <Carousel fade interval={4000} pause={false}>
-// //         {testimonials.map((testimonial, index) => (
-// //           <Carousel.Item key={index}>
-// //             <div className="d-flex flex-column align-items-center text-center p-4">
-// //               <img
-// //                 src={testimonial.photo}
-// //                 alt={testimonial.name}
-// //                 className="rounded-circle mb-3"
-// //                 style={{ width: '100px', height: '100px', objectFit: 'cover' }}
-// //               />
-// //               <p className="mb-3 fst-italic">"{testimonial.text}"</p>
-// //               <h5>{testimonial.name}</h5>
-// //               <small className="text-muted">{testimonial.position}</small>
-// //             </div>
-// //           </Carousel.Item>
-// //         ))}
-// //       </Carousel>
-// //     </Container>
-// //   );
-// // };
-
-// // export default TestimonialCarousel;

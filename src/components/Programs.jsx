@@ -12,7 +12,9 @@ const Programs = () => {
           {/* Empty div, can add content later */}
         </div>
         <div className='col-12 col-md-5 text-center text-md-start mb-3 mb-md-0'>
-          <h1>Programs we offer for Kids</h1>
+        <h1 style={{color: 'rgba(101, 89, 69, 1)' }}>
+  Programs we offer <span style={{ fontWeight: 'bold'}}>for Kids</span>
+</h1>
         </div>
         <div className='col-12 col-md-3 d-flex justify-content-center justify-content-md-end'>
           <button type="button" className=" me-md-5 bg-maroon rounded-3 ">

@@ -60,9 +60,13 @@ const Exams = () => {
   return (
     <div className="container py-5">
       <div className="d-flex justify-content-between align-items-center mb-4">
-        <h2 className="fw-bold">
-          Master in <span style={{ color: "#664E2B" }}>IELTS, TOEFL Exams</span>
-        </h2>
+        <div>
+            
+        </div>
+
+           <h2 style={{color: 'rgba(101, 89, 69, 1)' }}>
+    Master in  <span style={{ fontWeight: 'bold'}}>IELTS, TOEFL Exams</span>
+</h2>
             <button type="button" className=" me-md-5 bg-maroon rounded-3 ">
             View All <CallMadeIcon/>
           </button>

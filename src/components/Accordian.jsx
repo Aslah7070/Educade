@@ -39,7 +39,9 @@ export default function FAQAccordion() {
 
   return (
     <div className="container my-5">
-      <h2 className="text-center mb-4 fw-bold">Frequently Asked Questions</h2>
+                 <h2 className='mb-5 text-center' style={{color: 'rgba(101, 89, 69, 1)' }}>
+Frequently asked <span style={{ fontWeight: 'bold'}}>Questions</span>
+</h2>
 
       <div className="accordion" id="faqAccordion">
         {faqData.map((item, index) => (

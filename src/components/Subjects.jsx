@@ -27,9 +27,9 @@ const Subjects = () => {
                     </div>
                 </div>
                 <div className='col-5'>
-                    <h1>
-                        Subjects We <span >Teach</span>
-                    </h1>
+                       <h1 style={{color: 'rgba(101, 89, 69, 1)' }}>
+  Subjects We  <span style={{ fontWeight: 'bold'}}>Teach</span>
+</h1>
                 </div>
                 <div className='col-3'>
                        <button type="button" className=" me-md-5 bg-maroon">

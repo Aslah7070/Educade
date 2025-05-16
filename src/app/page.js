@@ -18,23 +18,35 @@ import Media from "@/components/youtube";
 
 export default function Home() {
   return (
-    <div className="container-fluid  p-0 ">
-      <Header/>
-      <Article/>
-      <Story  />
-      <Teaching/>
-      {/* <TestimonialCarousel/> */}
-      <Programs/>
-          <Subjects/>
-           <Media/>
-      <Exams/>
+    <div className="container-fluid p-0">
+      <Header />
 
-   
-    <MoreAbout/>
-    <FAQAccordion/>
-    <BlogSection/>
-    <Footer/>
-   
+      <section id="about">
+        <Article />
+      </section>
+
+      <section id="courses">
+        <Story />
+      </section>
+
+      <section id="career">
+        <Teaching />
+      </section>
+
+      <section id="blog">
+        <Programs />
+      </section>
+
+      <section id="payments">
+        <Subjects />
+      </section>
+
+      <Media />
+      <Exams />
+      <MoreAbout />
+      <FAQAccordion />
+      <BlogSection />
+      <Footer />
     </div>
   );
 }

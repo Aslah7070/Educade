@@ -14,17 +14,21 @@ const Header = () => {
   { text: "News & Blog", color: "text-white" },  
   { text: "Payments", color: "text-white" }      
 ];
-  const dropdownItems = [
-    { label: "About us", onClick: () => console.log("Action clicked") },
-    { label: "Courses",  onClick: () => console.log("Another clicked") },
-    { label: "Career",  onClick: () => console.log("Another clicked") },
-    { label: "News & Blog", onClick: () => console.log("Something clicked") },
-    { label: "Payments", onClick: () => console.log("Something clicked") },
-    { label: "News & Blog", onClick: () => console.log("Something clicked") },
-  ];
-
+const dropdownItems = [
+  { label: "About us", onClick: () => scrollToSection("about") },
+  { label: "Courses", onClick: () => scrollToSection("courses") },
+  { label: "Career", onClick: () => scrollToSection("career") },
+  { label: "News & Blog", onClick: () => scrollToSection("blog") },
+  { label: "Payments", onClick: () => scrollToSection("payments") },
+];
+const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  }
+};
   return (
-  <div className="container-fluid bg-maroon p-0">
+  <div className="container-fluid bg-maroon px-3">
   <div className="row">
     <div className="col-3  d-flex justify-content-center align-items-center order-1 order-md-1">
       <div className="d-flex justify-content-center align-items-center">
@@ -48,7 +52,7 @@ const Header = () => {
 
     
     <div className=" col-7 col-md-4   d-flex justify-content-center align-items-center order-2 order-md-3">
-      <div className="w-75 p-0 d-flex flex-column">
+      <div className="w-75 p-0  d-none d-md-flex  flex-column">
         <p style={{ fontSize: "0.8rem" }} className="m-0 text-center">
         <RingVolumeIcon style={{ fontSize: "0.8rem" }}/>  +974 55555 3456
         </p>

@@ -35,9 +35,12 @@ const testimonials = [
 const MoreAbout = () => {
     return (
         <div className="container  py-5">
-            <h3 className="text-center mb-4">
-                <strong>Hear from our <span className="text-dark">Valuable Parents</span></strong>
+            <h3 className=" ">
+                <strong> <span className="text-dark"></span></strong>
             </h3>
+               <h1 className='mb-5 text-center' style={{color: 'rgba(101, 89, 69, 1)' }}>
+ Hear from our <span style={{ fontWeight: 'bold'}}>Valuable Parents</span>
+</h1>
 
             <div  className="row d-flex justify-content-center  ">
                 {testimonials.map((testimonial, i) => (
