@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import vector from "../assets/vector.png"
+import vector from "../assets/Vector.png"
 import Image from 'next/image';
 import fam1 from "../assets/fam1-.png"
 import fam2 from "../assets/fam3-.png"
